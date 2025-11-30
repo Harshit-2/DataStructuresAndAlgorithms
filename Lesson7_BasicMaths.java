@@ -113,7 +113,7 @@ public class Lesson7_BasicMaths {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int num = sc.nextInt();
-//        System.out.println(countDigitsMeth1(num));
+        System.out.println(countDigitsMeth1(num));
 //        System.out.println(countDigitsMeth2(num));
 //        System.out.println(reverseNumber(num));
 //        System.out.println(checkPalindrome(num));
