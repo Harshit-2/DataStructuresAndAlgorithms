@@ -21,6 +21,24 @@ class SelectionSort {
     }
 }
 
+class BubbleSort {
+    int[] sort(int[] arr) {
+        for (int i = 0; i < arr.length; i++) {
+            int didSwap = 0;
+            for (int j = 0; j < arr.length - i - 1; j++) {
+                if (arr[j] > arr[j+1]) {
+                    int temp = arr[j + 1];
+                    arr[j + 1] = arr[j];
+                    arr[j] = temp;
+                    didSwap += 1;
+                }
+            }
+            if (didSwap == 0) break;
+        }
+        return arr;
+    }
+}
+
 public class Lesson14_SelectionBubbleInsertion {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -31,8 +49,12 @@ public class Lesson14_SelectionBubbleInsertion {
             System.out.print("Enter element " + (i+1) + ": ");
             arr[i] = sc.nextInt();
         }
-        System.out.print("After using Selection Sort: ");
-        SelectionSort ss = new SelectionSort();
-        System.out.println(Arrays.toString(ss.sort(arr)));
+//        System.out.print("After using Selection Sort: ");
+//        SelectionSort ss = new SelectionSort();
+//        System.out.println(Arrays.toString(ss.sort(arr)));
+
+        System.out.print("After using Bubble Sort: ");
+        BubbleSort bs = new BubbleSort();
+        System.out.println(Arrays.toString(bs.sort(arr)));
     }
 }
