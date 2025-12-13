@@ -1,9 +1,6 @@
 package com.company;
 
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Scanner;
-import java.util.Set;
+import java.util.*;
 
 public class Lesson18_RotateAnArray {
     static int[] leftRotateAnArrayByOneDigit (int[] arr) {
@@ -125,6 +122,46 @@ public class Lesson18_RotateAnArray {
         return arr;
     }
 
+    static List <Integer> unionOfTwoSortedArraysOptimized(int[] arr1, int[] arr2) {
+        ArrayList <Integer> union = new ArrayList<>();
+        int i = 0;
+        int j = 0;
+        int n1 = arr1.length;
+        int n2 = arr2.length;
+        while (i < n1 && j < n2) {
+            if (arr1[i] < arr2[j]) {
+                if (union.size() == 0 || union.get(union.size() - 1) != arr1[i]) {
+                    union.add(arr1[i]);
+                }
+                i++;
+            }
+            else {
+                if (union.size() == 0 || union.get(union.size() - 1) != arr2[j]) {
+                    union.add(arr2[j]);
+                }
+                j++;
+            }
+        }
+        while (i < n1) {
+            if (union.size() == 0 || union.get(union.size() - 1) != arr1[i]) {
+                union.add(arr1[i]);
+            }
+            i++;
+        }
+        while (j < n2) {
+            if (union.size() == 0 || union.get(union.size() - 1) != arr2[j]) {
+                union.add(arr2[j]);
+            }
+            j++;
+        }
+        return  union;
+    }
+
+    static int[] intersectionOfTwoSortedArrays(int[] arr1, int[] arr2) {
+
+        return arr;
+    }
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter size of array: ");
@@ -151,6 +188,7 @@ public class Lesson18_RotateAnArray {
             System.out.print("Enter element " + (i) + ": ");
             arr2[i] = sc.nextInt();
         }
-        System.out.print("Union of 2 arrays is: " + Arrays.toString(unionOfTwoSortedArrays(arr, arr2)));
+//        System.out.print("Union of 2 arrays is: " + Arrays.toString(unionOfTwoSortedArrays(arr, arr2)));
+        System.out.print("Union of 2 arrays is: " + unionOfTwoSortedArraysOptimized(arr, arr2));
     }
 }
