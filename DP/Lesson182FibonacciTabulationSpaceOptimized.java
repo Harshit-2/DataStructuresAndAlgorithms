@@ -1,0 +1,23 @@
+import java.lang.reflect.Array;
+import java.util.Arrays;
+
+public class Lesson182FibonacciTabulationSpaceOptimized {
+    public static int fibonacci(int n) {
+        if(n <= 1) return n;
+        int prev2 = 0;
+        int prev = 1;
+        int curr = 0;
+        for (int i = 2; i <= n; i++) {
+            curr = prev + prev2;
+            prev2 = prev;
+            prev = curr;
+            
+        }
+        return curr;
+    }
+    
+    public static void main(String[] args) {
+        int n = 6;
+        System.out.println(fibonacci(n));
+    }
+}
