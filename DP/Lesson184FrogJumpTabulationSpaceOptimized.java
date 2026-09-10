@@ -1,4 +1,4 @@
-public class Lesson148FrogJumpTabulationSpaceOptimized {
+public class Lesson184FrogJumpTabulationSpaceOptimized {
      public static int frogJump(int n, int[] height) {
         int prev = 0;
         int prev2 = 0;

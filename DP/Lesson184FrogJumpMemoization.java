@@ -1,7 +1,7 @@
 import java.lang.reflect.Array;
 import java.util.Arrays;
 
-public class Lesson148FrogJumpMemoization {
+public class Lesson184FrogJumpMemoization {
 
     public static int solve(int ind, int[] height, int[] dp) {
         if (ind == 0) return 0;

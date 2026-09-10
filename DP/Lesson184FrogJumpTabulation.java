@@ -1,6 +1,6 @@
 import java.util.Arrays;
 
-public class Lesson148FrogJumpTabulation {
+public class Lesson184FrogJumpTabulation {
     public static int frogJump(int n, int[] height, int[] dp) {
         dp[0] = 0;
         for (int i = 1; i < n; i++) {
