@@ -1,21 +1,23 @@
 import java.util.ArrayList;
-import java.util.Arrays;
 
-public class Lesson187HouseRobber2Tabulation {
+public class Lesson187HouseRobber2TabulationSpaceOptimized {
     public static long solve(int[] valueInHouse) {
         int n = valueInHouse.length;
-        int[] dp = new int[n];
-        dp[0] = valueInHouse[0];
+        int prev = valueInHouse[0];
+        int prev2 = 0;
+        int cur = 0;
 
         for (int i = 1; i < n; i++) {
             int pick = valueInHouse[i];
             if (i > 1) {
-                pick += dp[i-2];
+                pick += prev2;
             }
-            int notPick = 0 + dp[i-1];
-            dp[i] = Math.max(pick, notPick);
+            int notPick = 0 + prev;
+            cur = Math.max(pick, notPick);
+            prev2 = prev;
+            prev = cur;
         }
-        return dp[n-1];
+        return prev;
     }
 
     public static long houseRobber(int[] valueInHouse) {
