@@ -1,44 +1,36 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Main {
 
-    public static long solve(int[] valueInHouse) {
-        int n = valueInHouse.length;
-        int prev = valueInHouse[0];
-        int prev2 = 0;
-        int cur = 0;
+    public static int solve(ArrayList<Integer> nums, int[] dp, int ind) {
+        if(ind == 0) return nums.get(0);
+        if (ind < 0) return 0;
+        if (dp[ind] != -1) return dp[ind];
 
-        for (int i = 1; i < n; i++) {
-            int pick = valueInHouse[i];
-            if (i > 1) {
-                pick += prev2;
-            }
-            int notPick = 0 + prev;
-            cur = Math.max(pick, notPick);
-            prev2 = prev;
-            prev = cur;
+        int pick = nums.get(ind);
+        if (ind > 1) {
+            pick += solve(nums, dp, ind - 2);
         }
-        return prev;
+        int notPick = 0 + solve(nums, dp, ind - 1);
+        dp[ind] = Math.max(pick, notPick);
+        return dp[ind];
     }
 
-    public static long houseRobber(int[] valueInHouse) {
-        int n = valueInHouse.length;
-        if(n == 1) return valueInHouse[0];
-        ArrayList<Integer> list1 = new ArrayList<>();
-        ArrayList<Integer> list2 = new ArrayList<>();
-        for (int i = 0; i < n; i++) {
-            if (i != 0) list1.add(valueInHouse[i]);
-            if (i != n-1) list2.add(valueInHouse[i]);
-        }
-
-        int[] arr1 = list1.stream().mapToInt(Integer::intValue).toArray();
-        int[] arr2 = list2.stream().mapToInt(Integer::intValue).toArray();
-
-        return Math.max(solve(arr1), solve(arr2));
+    public static int maximumNonAdjacentSum(ArrayList<Integer> nums) {
+        int[] dp = new int[nums.size()];
+        Arrays.fill(dp, -1);
+        return solve(nums, dp, nums.size()-1);
     }
 
     public static void main(String[] args) {
-        int[] arr = { 1, 5, 1, 2, 6 };
-        System.out.println(houseRobber(arr));
+        ArrayList<Integer> list = new ArrayList<>();
+        
+        list.add(2);
+        list.add(1);
+        list.add(4);
+        list.add(9);
+
+        System.out.println(maximumNonAdjacentSum(list));
     }
 }
