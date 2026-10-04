@@ -3,24 +3,24 @@ import java.util.Arrays;
 
 public class Main {
 
-    public static int solve(ArrayList<Integer> nums, int[] dp, int ind) {
-        if(ind == 0) return nums.get(0);
-        if (ind < 0) return 0;
-        if (dp[ind] != -1) return dp[ind];
+    public static int solve(ArrayList<Integer> nums) {
+        int n = nums.size();
+        int prev2 = 0;
+        int cur = 0;
+        int prev = nums.get(0);
+        int val = -1;
 
-        int pick = nums.get(ind);
-        if (ind > 1) {
-            pick += solve(nums, dp, ind - 2);
+        for (int i = 1; i < n; i++) {
+            int pick = nums.get(i);
+            if (i > 1) {
+                pick += prev2;
+            }
+            int notPick = 0 + prev;
+            val = cur = Math.max(pick, notPick);
+            prev2 = prev;
+            prev = cur;
         }
-        int notPick = 0 + solve(nums, dp, ind - 1);
-        dp[ind] = Math.max(pick, notPick);
-        return dp[ind];
-    }
-
-    public static int maximumNonAdjacentSum(ArrayList<Integer> nums) {
-        int[] dp = new int[nums.size()];
-        Arrays.fill(dp, -1);
-        return solve(nums, dp, nums.size()-1);
+        return val;
     }
 
     public static void main(String[] args) {
@@ -31,6 +31,6 @@ public class Main {
         list.add(4);
         list.add(9);
 
-        System.out.println(maximumNonAdjacentSum(list));
+        System.out.println(solve(list));
     }
 }
