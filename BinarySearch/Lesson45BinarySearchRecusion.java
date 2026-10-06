@@ -11,7 +11,7 @@ public class Lesson45BinarySearchRecusion {
     }
 
 
-    public static int search(int []nums, int target) {
+    public static int main(int []nums, int target) {
         // Write your code here.
     return binarySearch(nums, 0, nums.length-1, target);
     }

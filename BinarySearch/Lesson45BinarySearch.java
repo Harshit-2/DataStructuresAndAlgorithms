@@ -12,5 +12,9 @@ public class Lesson45BinarySearch {
         }
         return -1;
     }
+    public static void main(String[] args) {
+    int[] arr = { 0,1,3,6,8,9,10 };
+    System.out.println(search(arr, 6));
+}
 
 }
