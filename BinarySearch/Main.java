@@ -5,23 +5,24 @@ import java.util.List;
 
 public class Main {
 
-    public static int findPeak(ArrayList<Integer>arr) {
-
-        for (int i = 1; i < arr.size()-1; i++) {
-            if (arr.get(i-1) < arr.get(i) && arr.get(i) > arr.get(i+1)) {
-                return i;
+    public static int sqrtN(long N) {
+        long low = 0;
+        long high = (int) N;
+        long ans = Integer.MAX_VALUE;
+        while (low <= high) {
+            long mid = low + (high-low) / 2;
+            if (mid * mid == N) return mid;
+            else if (mid * mid > N) {
+                ans = mid;
+                high = mid - 1;
             }
+            else low = mid + 1;
         }
-        if (arr.get(arr.size()-1) > arr.get(0)) {
-                return arr.size()-1;
-            }
-
-        else return 0;
+        return (int)ans-1;
     }
 
     public static void main(String[] args) {
-    ArrayList<Integer> arr = new ArrayList<>(List.of(1,2,3,4,5));
-    System.out.println(findPeak(arr));
+    System.out.println(sqrtN(8));
     }
 }
 
