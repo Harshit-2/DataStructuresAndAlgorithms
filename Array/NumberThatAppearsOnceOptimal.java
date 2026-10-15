@@ -1,7 +1,7 @@
 import java.lang.reflect.Array;
 import java.util.*;
 
-class Main {
+class NumberThatAppearsOnceOptimal {
   public static int numberThatAppearsOnce(int []a) {
     int xor = 0;
     for(int i = 0; i < a.length; i++) {

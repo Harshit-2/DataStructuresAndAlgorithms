@@ -1,7 +1,7 @@
 import java.lang.reflect.Array;
 import java.util.*;
 
-class Main {
+class longestConsecutiveSubsequenceBetter {
   public static int longestConsecutiveSequence (int[] arr) {
    Arrays.sort(arr);
    int longest = 1;

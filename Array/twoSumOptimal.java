@@ -1,7 +1,7 @@
 import java.lang.reflect.Array;
 import java.util.*;
 
-class Main {
+class twoSumOptimal {
   public static boolean twoSum(int[] a, int sum) {
     int j = a.length - 1;
     Arrays.sort(a);

@@ -1,7 +1,7 @@
 import java.lang.reflect.Array;
 import java.util.*;
 
-class Main {
+class maxConsecutiveOnes {
   public static int maxConsecutiveOnes(int []a) {
     int counter = 0;
     int max = 0;

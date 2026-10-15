@@ -1,6 +1,6 @@
 import java.util.*;
 
-class Main {
+class tempCodeRunnerFile {
 
     public static int maxProductSubArray(int[] arr) {
         int max = Integer.MIN_VALUE;

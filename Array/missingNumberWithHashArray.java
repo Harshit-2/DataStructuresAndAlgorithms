@@ -1,7 +1,7 @@
 import java.lang.reflect.Array;
 import java.util.*;
 
-class Main {
+class missingNumberWithHashArray {
   public static int missingNumber(int []a, int N) {
     int[] hMap = new int [N+1];
     int miss = -1;

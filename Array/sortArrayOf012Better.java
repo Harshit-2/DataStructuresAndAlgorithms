@@ -1,7 +1,7 @@
 import java.lang.reflect.Array;
 import java.util.*;
 
-class Main {
+class sortArrayOf012Better {
   public static int[] sortArrayOf012(int[] a) {
    int count0 = 0;
    int count1 = 0;

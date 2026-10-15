@@ -1,4 +1,3 @@
-package com.company;
 import java.util.Scanner;
 
 public class Lesson10_Recursion {

@@ -1,7 +1,7 @@
 import java.lang.reflect.Array;
 import java.util.*;
 
-class Main {
+class numberThatAppearsOnceBrute {
   public static int numberThatAppearsOnce(int []a) {
    int element = -1;
    for(int i = 0; i < a.length; i++) {

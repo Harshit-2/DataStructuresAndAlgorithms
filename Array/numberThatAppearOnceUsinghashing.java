@@ -1,7 +1,7 @@
 import java.lang.reflect.Array;
 import java.util.*;
 
-class Main {
+class numberThatAppearOnceUsinghashing {
   public static int numberThatAppearsOnce(int []a, int maxi) {
     int unique[] = new int[maxi + 1];
     int uniqueElement = -1;

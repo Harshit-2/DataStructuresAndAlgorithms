@@ -1,7 +1,7 @@
 import java.lang.reflect.Array;
 import java.util.*;
 
-class del {
+class longestSubArrayBetter {
   public static int longestSubarray(int[] arr, int sumission) {
     int maxLen = 0;
     int sum = 0;

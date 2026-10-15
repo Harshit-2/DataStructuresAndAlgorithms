@@ -1,7 +1,7 @@
 import java.lang.reflect.Array;
 import java.util.*;
 
-class Main {
+class TwoSumProblemBetter {
   public static boolean twoSum(int[] a, int sum) {
     Map<Integer, Integer> map = new HashMap();
     int numRequired = -1;

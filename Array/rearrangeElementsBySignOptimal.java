@@ -1,7 +1,7 @@
 import java.lang.reflect.Array;
 import java.util.*;
 
-class Main {
+class rearrangeElementsBySignOptimal {
   public static int[] rearrangeArrayElementsBySign(int[] arr) {
    int[] ans = new int[arr.length];
    int cp = 0;

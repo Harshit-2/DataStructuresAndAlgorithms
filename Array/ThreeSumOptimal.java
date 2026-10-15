@@ -1,6 +1,6 @@
 import java.util.*;
 
-class Main {
+class ThreeSumOptimal {
   public static List<List<Integer>> threeSum(int[] arr) {
    List<List<Integer>> list = new ArrayList<>();
    for(int i = 0; i < arr.length; i++) {

@@ -1,7 +1,7 @@
 import java.lang.reflect.Array;
 import java.util.*;
 
-class Main {
+class twoSumProblemBrute {
   public static boolean twoSum(int[] a, int sum) {
     for(int i = 0; i < a.length; i++) {
       for(int j = 0; j < a.length; j++) {

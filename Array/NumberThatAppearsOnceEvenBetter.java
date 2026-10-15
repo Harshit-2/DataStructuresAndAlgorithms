@@ -1,7 +1,7 @@
 import java.lang.reflect.Array;
 import java.util.*;
 
-class Main {
+class NumberThatAppearsOnceEvenBetter {
   public static int numberThatAppearsOnce(int []a) {
     HashMap<Integer, Integer> unique = new HashMap();
     for(int i = 0; i < a.length; i++) {

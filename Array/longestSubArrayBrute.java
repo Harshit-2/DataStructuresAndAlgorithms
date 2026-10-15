@@ -1,7 +1,7 @@
 import java.lang.reflect.Array;
 import java.util.*;
 
-class Main {
+class longestSubArrayBrute {
   public static int longestSubarray(int[] a, int sumission) {
     int maxLen = -1;
     for(int i = 0; i < a.length; i++) {
