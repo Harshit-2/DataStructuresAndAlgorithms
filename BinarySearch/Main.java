@@ -5,16 +5,20 @@ import java.util.List;
 
 public class Main {
 
-    public static int sqrtN(long N) {
+    public static int NthRoot(int n, int m) {
 
-    for (int i = 1; i < N; i++) {
-        if (i * i == N) return i;
-        else if (i * i > N) return i-1;
+    int low = 1;
+    int high = m;
+    while (low <= high) {
+        int mid = low + (high - low) / 2;
+        if (Math.pow(mid, n) == m) return mid;
+        else if (Math.pow(mid, n) > m) high = mid - 1;
+        else low = mid + 1;
     }
     return -1;
     }
 
     public static void main(String[] args) {
-    System.out.println(sqrtN(10));
+    System.out.println(NthRoot(3,27));
     }
 }
