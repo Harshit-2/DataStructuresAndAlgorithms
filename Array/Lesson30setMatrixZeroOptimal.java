@@ -1,6 +1,3 @@
-import java.lang.reflect.Array;
-import java.util.*;
-
 class Lesson30setMatrixZeroOptimal {
   public static int[][] setMatricolumnZeros(int[][] arr) {
 

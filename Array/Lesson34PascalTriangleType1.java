@@ -1,5 +1,3 @@
-import java.util.HashMap;
-
 class Lesson34PascalTriangleType1 {
 
     public static int pascalTriangle(int r, int n) {
