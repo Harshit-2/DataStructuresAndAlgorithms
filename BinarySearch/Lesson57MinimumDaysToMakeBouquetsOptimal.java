@@ -1,7 +1,6 @@
 package BinarySearch;
 
 public class Lesson57MinimumDaysToMakeBouquetsOptimal {
-    public class Solution {
     public static boolean possible(int[] arr, int day, int r, int b) {
         int bouquet = 0;
         int counter = 0;
@@ -40,10 +39,6 @@ public class Lesson57MinimumDaysToMakeBouquetsOptimal {
             else if (possible(arr, mid, r, b) == true) high = mid - 1;
         }
         return low;
-        // for (int i = min; i <= max; i++) {
-        //     if (possible(arr, i, r, b) == true) return i;
-        // }
-        // return -1;
     }
 
     public static void main(String[] args) {
